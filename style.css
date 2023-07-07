@@ -1,0 +1,193 @@
+:root{
+    --yellow:rgb(255, 251, 40);
+}
+
+.material-symbols-rounded{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 1000,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.container,
+.image,
+.container button,
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1{
+    font-size: 55px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.header .login{
+    position: absolute;
+    background: -webkit-linear-gradient(right, black, rgb(80,80,80));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header .gatolandia{
+    font-size: 50px;
+    background: -webkit-linear-gradient(left, var(--yellow), rgb(255, 200, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header img {
+    position: absolute;
+    height: 200px;
+    margin-left: 150px;
+    margin-bottom: 85px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: all 0.3s ease;
+    transform: rotate(-10deg);
+}
+
+.image {
+    width: 50vw;
+    background: linear-gradient(to left, var(--yellow), rgb(255, 200, 0));
+    box-shadow: 7px 0px 10px rgb(200, 200, 200, 0.3);
+}
+
+.cats {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(35px);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.image .cats img {
+    height: 260px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    animation: floating 10s alternate-reverse infinite;
+    mix-blend-mode:multiply;
+    opacity: 40%;
+}
+
+.container {
+    width: 30vw;
+    margin-inline: 8vw;
+    flex-direction: column;
+    gap: 40px;
+    background-color: transparent;
+}
+
+.container-input {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    justify-items: start;
+    width: 100%;
+    padding-inline: 30px;
+    padding-block: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color:rgb(248,248,248);
+    box-shadow: 0px 5px 5px rgb(200, 200, 200, 0.4);
+}
+
+.container-input input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 300ms;
+}
+
+.container-input input::placeholder {
+    color: rgb(200, 200, 200);
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.container-input span {
+    color: rgb(200, 200, 200, 0.6);
+}
+
+.container-input input:focus{
+    transform: scale(1.1);
+}
+
+.container button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: var(--yellow);
+    color: black;
+    border-radius: 10px;
+    gap: 10px;
+    font-weight: bold;
+    transition: transform 300ms;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgb(200, 200, 200, 0.4);
+}
+
+:is(.container button, .forgot):hover{
+    transform: scale(1.1);
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 13px;
+    gap: 50px;
+}
+
+.remember-password label{
+    font-weight: 900;
+}
+
+.remember-password{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: solid 5px var(--yellow);
+}
+
+.forgot{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: all 300ms ease;
+    border-bottom: solid 5px var(--yellow);
+}
